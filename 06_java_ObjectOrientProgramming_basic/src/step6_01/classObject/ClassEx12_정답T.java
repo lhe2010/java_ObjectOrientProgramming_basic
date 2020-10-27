@@ -17,14 +17,14 @@ import java.util.Scanner;
  * 
  */
 
-class Ex12{
-	
-	String[][] game = new String[3][3];
-	
-	int turn = 0;
-	int win = 0;	
-	
-}
+//class Ex12{
+//	
+//	String[][] game = new String[3][3];
+//	
+//	int turn = 0;
+//	int win = 0;	
+//	
+//}
 
 
 

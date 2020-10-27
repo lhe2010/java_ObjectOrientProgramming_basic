@@ -11,14 +11,14 @@ import java.util.Scanner;
  *    숫자 10~18은 back 배열에 저장한다.
  */
 
-class Ex13 {
-	
-	final int SIZE = 9;
-	
-	int[] front = new int[SIZE];
-	int[] back  = new int[SIZE];
-	
-}
+//class Ex13 {
+//	
+//	final int SIZE = 9;
+//	
+//	int[] front = new int[SIZE];
+//	int[] back  = new int[SIZE];
+//	
+//}
 
 
 public class ClassEx13_정답T {
