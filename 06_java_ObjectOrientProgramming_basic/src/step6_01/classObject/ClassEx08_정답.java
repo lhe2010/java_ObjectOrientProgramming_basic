@@ -20,8 +20,7 @@ import java.util.Scanner;
  */
 
 class Ex08{
-//	int[] game = {0, 0, 1, 0, 2, 0, 0, 1, 0};
-	int[] game = {0, 0, 2, 0, 0, 0, 0, 1, 0};
+	int[] game = {0, 0, 1, 0, 2, 0, 0, 1, 0};
 }
 
 public class ClassEx08_정답 {
