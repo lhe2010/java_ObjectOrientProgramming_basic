@@ -1,4 +1,3 @@
-// 2020-10-27 화 2교시 
 package step6_01.classObject;
 /*
  * # 사다리 게임
