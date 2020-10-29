@@ -98,7 +98,7 @@ public class MethodEx15_테스트문제 {
 
 	public static void main(String[] args) {
 
-		NumberGame g = new NumberGame();
+		MemoryGame g = new MemoryGame();
 		g.run();
 
 	}
