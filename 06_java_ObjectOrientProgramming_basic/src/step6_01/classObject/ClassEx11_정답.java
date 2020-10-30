@@ -1,5 +1,6 @@
 // 2020-10-28 수 3교시 17:11-17:48 (1-2번)
 // 2020-10-29 목 1교시 15:06-15:55 
+// 2020-10-30 금 1교시 15:10-15:20 (cnt를 이용해서 배열 복사 간단하게 해보는 수정)
 
 package step6_01.classObject;
 /*
@@ -23,7 +24,6 @@ package step6_01.classObject;
  * . 로그인시에만 이용가능
  */
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Ex11{
@@ -49,9 +49,25 @@ class Ex11{
 	}
 	
 	void printAll() {
-		System.out.println(Arrays.toString(this.arAcc));
-		System.out.println(Arrays.toString(this.arPw));
-		System.out.println(Arrays.toString(this.arMoney));
+		for (int i = 0; i < this.accCnt; i++) {
+			if(i == 0) System.out.print("\n[");
+			System.out.print(this.arAcc[i]);
+			if(i != this.accCnt-1) System.out.print(", ");
+			else if(i == this.accCnt-1) System.out.print("]");
+		}
+		for (int i = 0; i < this.accCnt; i++) {
+			if(i == 0) System.out.print("\n[");
+			System.out.print(this.arPw[i]);
+			if(i != this.accCnt-1) System.out.print(", ");
+			else if(i == this.accCnt-1) System.out.print("]");
+		}
+		for (int i = 0; i < this.accCnt; i++) {
+			if(i == 0) System.out.print("\n[");
+			System.out.print(this.arMoney[i]);
+			if(i != this.accCnt-1) System.out.print(", ");
+			else if(i == this.accCnt-1) System.out.print("]");
+		}
+		System.out.println();
 	}
 }
 
@@ -133,7 +149,8 @@ public class ClassEx11_정답 {
 						continue;
 					}
 				}
-				// 배열 한칸 줄여서 복사
+				/*
+				// 배열 한칸 줄여서 복사 (처음한 방법)
 				String[] newArAcc = new String[e.accCnt-1];
 				String[] newArPw = new String[e.accCnt-1];
 				int[] newArMoney = new int[e.accCnt-1];
@@ -151,6 +168,15 @@ public class ClassEx11_정답 {
 				e.arPw = newArPw;
 				e.arMoney = newArMoney;
 				e.accCnt--;
+				e.identifier = -1;
+				*/
+				// 배열 복사 (두번째 방법 - cnt로 관리. classArrayEx05.java(2)참고)
+				e.accCnt--;
+				for (int i = e.identifier; i < e.accCnt; i++) {
+					e.arAcc[i] = e.arAcc[i+1];
+					e.arPw[i] = e.arPw[i+1];
+					e.arMoney[i] = e.arMoney[i+1];
+				}
 				e.identifier = -1;
 			} else if (sel == 3) {
 				System.out.println("\n...[3] 로그인");
@@ -233,11 +259,11 @@ public class ClassEx11_정답 {
 				
 			} else if (sel == 7) {
 				System.out.println("\n...[7] 잔액조회");
-				if(e.identifier == -1) {
-					System.out.println("!!해당 메뉴는 로그인 시에만 이용가능합니다. ");
-					continue;
-				}
-				System.out.printf("%s고객님의 잔액은 %d원 입니다. \n", e.arAcc[e.identifier], e.arMoney[e.identifier]);
+//				if(e.identifier == -1) {
+//					System.out.println("!!해당 메뉴는 로그인 시에만 이용가능합니다. ");
+//					continue;
+//				}
+//				System.out.printf("%s고객님의 잔액은 %d원 입니다. \n", e.arAcc[e.identifier], e.arMoney[e.identifier]);
 				e.printAll();
 			} else if (sel == 0) {
 				System.out.println("프로그램 종료");

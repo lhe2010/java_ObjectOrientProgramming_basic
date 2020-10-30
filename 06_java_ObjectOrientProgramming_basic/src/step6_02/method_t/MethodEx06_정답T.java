@@ -1,5 +1,5 @@
-package step6_02.method;
-/*
+package step6_02.method_t;
+
 class Ex06{
 	
 	void test1 (int x, int y) {
@@ -9,10 +9,7 @@ class Ex06{
 			total += i;
 		}
 		System.out.println("total = " + total);
-		
 	}
-	
-	
 	
 	void test2(int[] arr) {
 		
@@ -23,20 +20,14 @@ class Ex06{
 			}
 		}
 		System.out.println("최대값 = " + maxNum);
-		
 	}
-	
-	
 	
 	void test3 (int[] arr, int idx1, int idx2) {
 		
 		int temp = arr[idx1];
 		arr[idx1] = arr[idx2];
 		arr[idx2] = temp;
-		
 	}
-	
-	
 	
 	void print (int[] arr) {
 		
@@ -45,10 +36,7 @@ class Ex06{
 		}
 		System.out.println();
 	}
-	
 }
-*/
-
 
 public class MethodEx06_정답T {
 
@@ -74,8 +62,5 @@ public class MethodEx06_정답T {
 		
 //		e.print(arr);
 
-
-
 	}
-
 }

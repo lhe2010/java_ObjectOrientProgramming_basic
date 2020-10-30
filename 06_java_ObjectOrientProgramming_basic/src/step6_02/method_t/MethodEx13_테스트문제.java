@@ -1,4 +1,4 @@
-package step6_02.method;
+package step6_02.method_t;
 
 import java.util.Scanner;
 
@@ -24,7 +24,6 @@ import java.util.Scanner;
  * ----------------------
  * 매출액 : 24000원
  */
-
 class Theater{
 	
 	Scanner scan = new Scanner(System.in);

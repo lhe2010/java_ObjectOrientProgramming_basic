@@ -1,4 +1,4 @@
-package step6_02.method;
+package step6_02.method_t;
 
 import java.util.Random;
 import java.util.Scanner;
