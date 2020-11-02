@@ -1,6 +1,7 @@
-package step6_02.method;
+package step6_02.method_t;
 
 import java.util.Scanner;
+
 
 //# 틱택토
 
