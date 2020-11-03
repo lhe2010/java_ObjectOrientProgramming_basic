@@ -26,7 +26,11 @@ class TicTacToe{
 		System.out.println("===틱택토===");
 		for (int i = 0; i < game.length; i++) {
 			for (int j = 0; j < game.length; j++) {
-				System.out.printf("[%s]", game[i][j]);
+				if(game[i][j] == " ") {
+					System.out.printf("[%d]",i*3+j);
+				} else {
+					System.out.printf("[%s]", game[i][j]);
+				}
 			}
 			System.out.println();
 		}

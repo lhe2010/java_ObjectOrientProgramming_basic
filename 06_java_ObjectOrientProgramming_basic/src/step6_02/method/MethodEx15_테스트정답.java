@@ -32,7 +32,7 @@ class MemoryGame{
 	
 	void printCard() {
 		for (int i = 0; i < back.length; i++) {
-			System.out.print(i + "  ");
+			System.out.print(i + " ");
 		}
 		System.out.println();
 		
