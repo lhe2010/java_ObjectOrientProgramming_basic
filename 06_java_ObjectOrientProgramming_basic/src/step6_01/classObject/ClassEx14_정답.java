@@ -1,4 +1,5 @@
 // 2020-10-29 목 3교시 17:00-17:40 (프린트 꼬인것 제외하고 해결완료)
+// 2020-11-04 수 1교시 15:41-15:46 (프린트 꼬인 부분 해결)
 package step6_01.classObject;
 
 import java.util.Scanner;
@@ -46,21 +47,21 @@ class Ex14{public Ex14() {
 			for (int j = 0; j < ladder[0].length; j++) {	// 열
 				int temp = ladder[i][j];
 				if(temp == 0) {
-					System.out.print(" │ ");
+					System.out.print(" ┃");
 					continue;
 				} 
 				if(j == 0) 	{					// 양쪽 맨 끝인경우 
-					System.out.print(" ├─");
+					System.out.print(" ┣");
 					continue;
 				} else if(j == ladder.length-1)	{
-					System.out.print("┤ ");
+					System.out.print("━┫");
 					continue;
 				}
 				
 				if(this.ladder[i][j-1] == 1) { 			// 왼쪽 1
-					System.out.print("─┤");
+					System.out.print("━┫");
 				} else if( this.ladder[i][j+1] == 1) { 	// 오른쪽 1
-					System.out.print(" ├─");
+					System.out.print(" ┣");
 				}
 			}
 			System.out.println();
