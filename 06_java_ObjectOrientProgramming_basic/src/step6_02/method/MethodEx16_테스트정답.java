@@ -1,4 +1,5 @@
-// 2020-10-31 토 자습 16:36-16:50 
+// 2020-10-31 토 자습 16:36-16:50
+// 2020-11-04 수 1교시 15:20-15:38
 package step6_02.method;
 
 import java.util.Scanner;
@@ -51,42 +52,55 @@ class TicTacToe{
 					game[choice/3][choice%3] = "O";
 					turn = 1;
 				}
+				break;
 			} else {
 				// 선택불가능한 자리 
 				System.out.println("!! Invalid Index !!");
 				continue;
 			}
 		}
-		
 	}
 	
 	void exitWidth() {
 		for (int i = 0; i < game.length; i++) {
-			if(game[i][0].equals(game[i][1]) && game[i][0].equals(game[i][2])) {
+			if(!game[i][0].equals(" ") && game[i][0].equals(game[i][1]) && game[i][0].equals(game[i][2])) {
 				if(game[i][0] == "X") win = 1;
 				else win = 2;
+				System.out.println("?????");
 			}
 		}
+		System.out.println("exitwidth win == " + win);
 	}
 	
 	void exitHeight() {
 		for (int i = 0; i < game.length; i++) {
-			if(game[i][0].equals(game[i][1]) && game[i][0].equals(game[i][2])) {
-				if(game[i][0] == "X") win = 1;
+			if(!game[0][i].equals(" ") && game[0][i].equals(game[1][i]) && game[0][i].equals(game[2][i])) {
+				if(game[0][i] == "X") win = 1;
 				else win = 2;
 			}
 		}
 	}
 	
 	void exitCross() {
+		if(!game[1][1].equals(" ") && game[0][0].equals(game[1][1]) && game[0][0].equals(game[2][2])) {
+			if(game[1][1] == "X") win = 1;
+			else win = 2;
+		} else if(!game[1][1].equals(" ") && game[2][0].equals(game[1][1]) && game[2][0].equals(game[0][2])) {
+			if(game[1][1] == "X") win = 1;
+			else win = 2;
+		}
 	}	
 	
 	void run() {
 		this.setGame();
 		while(win == 0) {
 			this.choiceIdx();
+			this.exitWidth();
+			this.exitHeight();
+			this.exitCross();
 		}
-		System.out.println("게임종료 ");
+		System.out.printf("\n게임종료, winner is %dp\n", this.win);
+		this.showGame();
 	}
 }
 
